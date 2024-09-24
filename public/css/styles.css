@@ -37,87 +37,107 @@ header {
 
 
 /*Sliders*/
-* {box-sizing:border-box}
 
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+.slider{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
 }
 
-.mySlides {
-  display: none;
+.slides{
+    width: 300%;
+    height: 100%;
+    display: flex;
+    transition: margin-left 2s;
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+.slides input{
+    display: none;
 }
 
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.slide{
+    width: 300%;
+    height: 100%;
+    position: relative;
+    transition: 2s;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.slide img{
+    background-color: #CCC;
+    width: 100%;  /* Preenche toda a largura da div */
+    height: 100%; /* Preenche toda a altura da div */
+    object-fit: contain; /* Garante que a imagem ocupe a div sem distorção */
 }
 
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+.manual-navigation{
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
 }
 
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+.manual-btn{
+    border: 2px solid #FFF;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
 }
 
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+.manual-btn:not(:last-child){
+    margin-right: 40px;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.manual-btn:hover{
+    background-color: #FFF;
 }
 
-.fade {
-    opacity: 1;
-    animation-name: fadeIn;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards; 
+#radio1:checked ~ .first{
+    margin-left: 0;
 }
-  
-  @keyframes fadeIn {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-  }
 
+#radio2:checked ~ .first{
+    margin-left: -67%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -400%;
+}
+
+.navigation-auto div{
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 100%;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #FFF;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: #FFF;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #FFF;
+}
 /*Rodape*/
 footer {
     text-align: center;

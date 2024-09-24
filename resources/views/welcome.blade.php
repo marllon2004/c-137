@@ -5,75 +5,57 @@
 @section('content')
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let slideIndex = 1;
-        showSlides(slideIndex);
+    document.addEventListener('DOMContentLoaded', function () {
+        let count = 1;
+        document.getElementById("radio1").checked = true;
 
-        window.plusSlides = function(n) {
-            showSlides(slideIndex += n);
-        };
+        setInterval(function () {
+            nextImage();
+        }, 2000);
 
-        window.currentSlide = function(n) {
-            showSlides(slideIndex = n);
-        };
+        function nextImage() {
+            count++;
 
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-
-            if (n > slides.length) {
-                slideIndex = 1;
+            if (count > 3) {
+                count = 1;
             }
 
-            if (n < 1) {
-                slideIndex = slides.length;
-            }
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
+            document.getElementById("radio" + count).checked = true;
+        
         }
     });
 </script>
 
-<div class="slideshow-container">
 
- 
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="/img/1.jpeg" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
+<div class="slider">
+    <div class="slides">
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
 
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="/img/2.jpeg" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
+        <div class="slide first">
+            <img src="/img/rick.jpg" alt="cod1"/>
+        </div>
 
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="/img/3.jpeg" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
+        <div class="slide">
+            <img src="/img/rick.jpg" alt="cod2"/>
+        </div>
 
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="slide">
+            <img src="/img/rick.jpg" alt="cod3"/>
+        </div>
+
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+        </div>
+    </div>
+
+    <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+    </div>
 </div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
 @endsection
