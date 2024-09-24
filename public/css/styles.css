@@ -47,7 +47,7 @@ header {
 }
 
 .slides{
-    width: 300%;
+    width: 100%;
     height: 100%;
     display: flex;
     transition: margin-left 2s;
@@ -58,7 +58,7 @@ header {
 }
 
 .slide{
-    width: 300%;
+    width: 100%;
     height: 100%;
     position: relative;
     transition: 2s;
@@ -95,7 +95,7 @@ header {
     background-color: #FFF;
 }
 
-#radio1:checked ~ .first{
+/*#radio1:checked ~ .first{
     margin-left: 0;
 }
 
@@ -105,7 +105,7 @@ header {
 
 #radio3:checked ~ .first{
     margin-left: -400%;
-}
+}*/
 
 .navigation-auto div{
     border: 2px solid #20a6ff;
