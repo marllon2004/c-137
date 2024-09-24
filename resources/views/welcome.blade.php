@@ -5,48 +5,75 @@
 @section('content')
 
 <script>
-    function myFunction(element) {
-        const slide = element.id
-        let image = ''
+    document.addEventListener('DOMContentLoaded', function() {
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-        switch (slide){
-            case 'slide1':
-                image = '/img/1.jpeg'
-                break;
-            case 'slide2':
-                image = '/img/2.jpeg'
-                break;
-            case 'slide3':
-                image = '/img/3.jpeg'
-                break;
-            default:
+        window.plusSlides = function(n) {
+            showSlides(slideIndex += n);
+        };
 
+        window.currentSlide = function(n) {
+            showSlides(slideIndex = n);
+        };
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
         }
-        document.getElementById('container-sliders').style.backgroundImage="url("+image+")";
-        console.log(slide)
-    }
+    });
 </script>
 
-<div id="container-sliders" style='background-image: url("/img/1.jpeg")'>
-    <ul class="slider">
-        <li style='background-image: url("/img/1.jpeg")'>
-            <input type="radio" id="slide1" name="slide" checked>
-        </li>
-        
-        <li style='background-image: url("/img/2.jpeg")'>
-            <input type="radio" id="slide2" name="slide">
-        </li>
-        <li style='background-image: url("/img/3.jpeg")'>
-            <input type="radio" id="slide3" name="slide">
-        </li>
-    </ul>
-    <ion-icon id="slide1" style="background-color: red" onclick="myFunction(this)" name="location-outline"></ion-icon>
-    <ion-icon id="slide2" style="background-color: red" onclick="myFunction(this)" name="location-outline"></ion-icon>
-    <ion-icon id="slide3" style="background-color: red" onclick="myFunction(this)" name="location-outline"></ion-icon>
-</div>
+<div class="slideshow-container">
 
-<div class="container-novos-lancamentos"></div>
-<div class="container-mais-vendidos"></div>
-    
+ 
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="/img/1.jpeg" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="/img/2.jpeg" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="/img/3.jpeg" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
 @endsection
