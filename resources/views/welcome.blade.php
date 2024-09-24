@@ -7,30 +7,32 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const radios = document.querySelectorAll('.input-radio');
-        let count = 1; // Contador para a mudança automática
-        let interval; // Armazenará o intervalo da mudança automática
         const img = document.getElementById('imagembraba');
+        let count = 1;
+        let interval;
 
-        // Função para mudar a imagem automaticamente
+        document.getElementById("radio" + count).checked = true;
+
         function nextImage() {
             count++;
+
             if (count > radios.length) {
                 count = 1;
             }
-            document.getElementById("radio" + count).checked = true; // Marca o próximo rádio
-            img.src = document.getElementById("radio" + count).value; // Muda a imagem
+
+            document.getElementById("radio" + count).checked = true;
+            img.src = document.getElementById("radio" + count).value;
         }
 
-        // Inicia o intervalo para mudar a imagem automaticamente
-        interval = setInterval(nextImage, 2000);
+        interval = setInterval(nextImage, 10000);
 
-        // Adiciona evento de clique aos botões de rádio
         radios.forEach(radio => {
             radio.onclick = function() {
-                img.src = this.value; // Muda a imagem
-                clearInterval(interval); // Para a mudança automática
-                // Reinicia o intervalo para continuar mudando as imagens
-                interval = setInterval(nextImage, 2000);
+                img.src = this.value;
+
+                clearInterval(interval);
+                
+                interval = setInterval(nextImage, 10000);
             };
         });
     });
@@ -47,14 +49,6 @@
             <img id="imagembraba" src="/img/rick.jpg" alt="cod1"/>
         </div>
 
-        <!--<div class="slide">
-            <img src="/img/rick.jpg" alt="cod2"/>
-        </div>
-
-        <div class="slide">
-            <img src="/img/rick.jpg" alt="cod3"/>
-        </div>-->
-
         <div class="navigation-auto">
             <div class="auto-btn1"></div>
             <div class="auto-btn2"></div>
@@ -68,4 +62,5 @@
         <label for="radio3" class="manual-btn"></label>
     </div>
 </div>
+
 @endsection

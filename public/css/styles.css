@@ -41,7 +41,6 @@ header {
 .slider{
     width: 100%;
     height: 400px;
-    overflow: hidden;
     position: relative;
     padding: 0;
 }
@@ -66,9 +65,9 @@ header {
 
 .slide img{
     background-color: #CCC;
-    width: 100%;  /* Preenche toda a largura da div */
-    height: 100%; /* Preenche toda a altura da div */
-    object-fit: contain; /* Garante que a imagem ocupe a div sem distorção */
+    width: 100%;
+    height: 100%; 
+    object-fit: contain; 
 }
 
 .manual-navigation{
@@ -94,18 +93,6 @@ header {
 .manual-btn:hover{
     background-color: #FFF;
 }
-
-/*#radio1:checked ~ .first{
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first{
-    margin-left: -67%;
-}
-
-#radio3:checked ~ .first{
-    margin-left: -400%;
-}*/
 
 .navigation-auto div{
     border: 2px solid #20a6ff;
@@ -138,6 +125,7 @@ header {
 #radio3:checked ~ .navigation-auto .auto-btn3{
     background-color: #FFF;
 }
+
 /*Rodape*/
 footer {
     text-align: center;
