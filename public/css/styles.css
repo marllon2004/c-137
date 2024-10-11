@@ -1,3 +1,8 @@
+:root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5)
+}
+
 * {
     font-family: 'Roboto';
     margin: 0;
@@ -8,11 +13,13 @@ body {
     min-height: 100vh;
     padding-bottom: 100px;
     position: relative;
+    padding: 0;
+    background-color: #191c29;
 }
 
 header {
-    background-color: #FFF;
-    border-bottom: 1px solid #CCC;
+    background-color: #191c29;
+    border-bottom: 1px solid #191c29;
 }
 
 /*Cabeçalho*/
@@ -22,7 +29,7 @@ header {
 
 #navbar {
     justify-content: space-between;
-    background-color: #FFF;
+    background-color: #191c29;
     padding: 5px 0;
 }
 
@@ -34,7 +41,6 @@ header {
 #navbar a:hover {
     color: #F2A340;
 }
-
 
 /*Sliders*/
 
@@ -64,7 +70,6 @@ header {
 }
 
 .slide img{
-    background-color: #CCC;
     width: 100%;
     height: 100%; 
     object-fit: contain; 
@@ -126,17 +131,195 @@ header {
     background-color: #FFF;
 }
 
+/*ofertas*/
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5%;
+}
+
+.icon-item {
+    text-align: center;
+    color: #008000;
+    transition: transform .2s;
+}
+
+.icon-item i {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.icon-item p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icon-container ion-icon{
+    zoom: 4.0;
+}
+
+.icon-item:hover{
+    transform: scale(1.2);
+}
+
+.icon-item a{
+    text-decoration: none;
+    color: #9640e5; 
+}
+
+/*explorar jogos*/
+
+.container-explorar{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.container-explorar h2{
+    color: #e20bf8;
+    font-size: 50px;
+    font-weight: 1000;
+    margin-bottom: 40px;
+}
+
+.container-explorar a {
+    text-decoration: none;
+    color: #9640e5;
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+.container-explorar a:hover{
+    color:#044c04;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+#explore-icon{
+    zoom: 1;
+}
+
+
+.games-cards{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #191c29;
+}
+
+/*Cards
+.games-cards .card {
+    flex: 1 1 24%;
+    max-width: 25%;
+    border-radius: 10px;
+    padding: 0;
+    margin: .5%;
+}*/
+
+.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin: 0 50px;
+    cursor: pointer;
+    background-color: #191c29;
+    border: none;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.wrapper::before,
+.wrapper::after {
+    content: '';
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+}
+
+.wrapper::before{
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to top, transparent 46%, rgb(12,13,19,0.5) 68%, rgb(12,13,19) 97%);
+}
+
+.wrapper::after{
+    bottom: 0;
+    opacity: 0;
+    background-image: linear-gradient(to top, transparent 46%, rgb(12,13,19,0.5) 68%, rgb(12,13,19) 97%);
+}
+
+.title {
+    width: 100%;
+    transition: transform 0.5s;
+}
+
+.character {
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 0px 35px 32px -8px rgb(0,0,0,0.75);
+}
+
+.card:hover .title {
+    transform: translate3d(0%, -50%, 100px);
+}
+
+.card:hover .wrapper::after,
+.wrapper::before {
+    opacity: 1;
+}
+
+.card:hover .wrapper::after{
+    height: 120px;
+}
+
+.card:hover .wrapper::before{
+    opacity: 1;
+}
+
+.card:hover .character{
+    opacity: 1;
+    transform: translate3d(0%, -30%, -100px);
+}
 /*Rodape*/
 footer {
     text-align: center;
     background-color: #353E48;
     color: #FFF;
     padding: 30px;
-    position: absolute;
     bottom: 0;
     width: 100%;
+    height: 300px;
 }
 
 footer p {
     margin-bottom: 0;
+    background-color: #353E48;
 }

@@ -14,6 +14,8 @@
         
         <link rel="stylesheet" href="/css/styles.css"></link>
         <script src="/js/scripts.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
         <header>
