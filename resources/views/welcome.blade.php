@@ -92,36 +92,56 @@
     </div>
 
     <div class="games-cards">
-        <div class="card">
-            <div class="wrapper">
-                <img class="cover-image" src="/img/dark_rider-cover.jpg" alt="">
+        <div class="container-card">
+            <div class="card">
+                <div class="wrapper">
+                    <img class="cover-image" src="/img/dark_rider-cover.jpg" alt="">
+                </div>
+                
+                <img class="character" src="/img/dark_rider-character.webp" alt="">
             </div>
+            <div class="card-body">
+                <p class="card-title">The dark rider</p>
+            </div>
+        </div>
+
+        <div class="container-card">
+            <div class="card">
+                <div class="wrapper">
+                    <img class="cover-image" src="/img/force_mage-cover.jpg" alt="">
+                </div>
+
+                <img class="character" src="/img/force_mage-character.webp" alt="">
+            </div>
+            <div class="card-body">
+                <p class="card-title">Force mage</p>
+            </div>
+        </div>
+
+        <div class="container-card">
+            <div class="card">
+                <div class="wrapper">
+                    <img class="cover-image" src="/img/dark_rider-cover.jpg" alt="">
+                </div>
+                
+                <img class="character" src="/img/dark_rider-character.webp" alt="">
+            </div>
+            <div class="card-body">
+                <p class="card-title">The dark rider</p>
+            </div>
+        </div>
+
+        <div class="container-card">
+            <div class="card">
+                <div class="wrapper">
+                    <img class="cover-image" src="/img/force_mage-cover.jpg" alt="">
+                </div>
             
-            <img class="character" src="/img/dark_rider-character.webp" alt="">
-        </div>
-
-        <div class="card">
-            <div class="wrapper">
-                <img class="cover-image" src="/img/force_mage-cover.jpg" alt="">
+                <img class="character" src="/img/force_mage-character.webp" alt="">
             </div>
-        
-            <img class="character" src="/img/force_mage-character.webp" alt="">
-        </div>
-
-        <div class="card">
-            <div class="wrapper">
-                <img class="cover-image" src="/img/dark_rider-cover.jpg" alt="">
+            <div class="card-body">
+                <p class="card-title">Force mage</p>
             </div>
-            
-            <img class="character" src="/img/dark_rider-character.webp" alt="">
-        </div>
-
-        <div class="card">
-            <div class="wrapper">
-                <img class="cover-image" src="/img/force_mage-cover.jpg" alt="">
-            </div>
-        
-            <img class="character" src="/img/force_mage-character.webp" alt="">
         </div>
     </div>
     
