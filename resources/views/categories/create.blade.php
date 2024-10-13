@@ -18,11 +18,12 @@
                 <textarea name="description" id="description" class="form-control" placeholder="Descrição da categoria"></textarea>
             </div>
 
-            <button class="btn">Criar Categoria</button>
+            <div class="button-container">
+                <button class="btn">Criar Categoria</button>
+            </div>
 
         </form>
     </div>
-    
 </div>
 
 @endsection

@@ -394,6 +394,11 @@ header {
     
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
 /*container category*/
 
 .style-container {
@@ -404,10 +409,14 @@ header {
     text-align: center;
     border-radius: 10px;
     position: relative;
-    z-index: 1; /* Conteúdo acima da borda */
+    z-index: 1;
     color: #FFF;
     margin-bottom: 2em;
     margin-top: 2em;
+}
+
+.style-container-card {
+    text-align: left;
 }
 
 @property --angle {
@@ -426,7 +435,7 @@ header {
     background: none;
     border-radius: 10px;
     padding: 3px;
-    background:#1c1f2b;
+    background: #1c1f2b;
     background-size: 300% 300%;
     z-index: -1;
     animation: gradient-border 5s ease infinite;
@@ -467,6 +476,29 @@ header {
         background-position: 0% 50%;
     }
 }
+
+.style-container-card h1 {
+    
+    text-align: center;
+}
+
+.style-container-card .form-group {
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+
 
 
 /*Rodape*/
