@@ -370,7 +370,7 @@ header {
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     filter: blur(8px);
-    animation: glowing 20s linear infinite;
+    animation: glowing 27s linear infinite;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
     opacity: 0;

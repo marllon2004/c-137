@@ -33,6 +33,9 @@
                             <a href="/events/create" class="nav-link">Cadastrar Jogos</a>
                         </li>
                         <li class="nav-item">
+                            <a href="/companies/create" class="nav-link">Cadastrar Empresas</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/categories/create" class="nav-link">Cadastrar Categorias</a>
                         </li>
 
