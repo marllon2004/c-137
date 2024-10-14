@@ -38,6 +38,9 @@
                         <li class="nav-item">
                             <a href="/categories/create" class="nav-link">Cadastrar Categorias</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/platforms/create" class="nav-link">Cadastrar Plataforma</a>
+                        </li>
 
 
                         @auth
