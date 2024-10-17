@@ -7,7 +7,7 @@
 <div class="style-container">
     <div class="style-container-card">
         <h1>Cadastrar categoria</h1>
-        <form action="/category" method="POST" enctype="multipart/form-data">
+        <form action="/categories" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">Nome da Categoria:</label>

@@ -7,7 +7,7 @@
 <div class="style-container">
     <div class="style-container-card">
         <h1>Cadastrar empresa</h1>
-        <form action="/company" method="POST" enctype="multipart/form-data">
+        <form action="/companies" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">Nome da Empresa:</label>
@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <label for="title">CNPJ:</label>
-                <input type="text" class="form-control" id="cnpj" name="cpnj" placeholder="CNPJ da empresa">
+                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ da empresa">
             </div>
             <div class="form-group">
                 <label for="title">Data de fundação:</label>
