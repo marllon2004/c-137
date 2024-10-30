@@ -7,7 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
-    use HasFactory;
+    protected $fillable = ['id', 'title', 'description', 'release_date', 'price', 'character_image', 'company_id', 'cover_image','created_at', 'updated_at']; 
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
     public function company(){
         return $this->belongsTo('App\models\Company');

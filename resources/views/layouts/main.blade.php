@@ -27,10 +27,15 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Jogos</a>
+                            <a href="/" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/events/create" class="nav-link">Cadastrar Jogos</a>
+                            <a href="/games/dashboard" class="nav-link">Jogos</a>
+                        </li>
+
+                        @auth
+                        <li class="nav-item">
+                            <a href="/games/create" class="nav-link">Cadastrar Jogos</a>
                         </li>
                         <li class="nav-item">
                             <a href="/companies/create" class="nav-link">Cadastrar Empresas</a>
@@ -41,16 +46,10 @@
                         <li class="nav-item">
                             <a href="/platforms/create" class="nav-link">Cadastrar Plataforma</a>
                         </li>
-
-
-                        @auth
-                        <li class="nav-item">
-                            <a href="/dashboard" class="nav-link">Meus eventos</a>
-                        </li>
                         <li class="nav-item">
                             <form action="/logout" method="POST">
                                 @csrf
-                                <a href="/logout" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+                                <a href="/logout" class="nav-link" onclick="game.preventDefault(); this.closest('form').submit();">Sair</a>
                             </form>
                         </li>
                         @endauth
