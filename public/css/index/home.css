@@ -1,0 +1,145 @@
+.slider{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    padding: 0;
+}
+
+.slides{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: margin-left 2s;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%; 
+    object-fit: contain; 
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #FFF;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: #FFF;
+}
+
+.navigation-auto div{
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 100%;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: #FFF;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: #FFF;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: #FFF;
+}
+
+/*ofertas*/
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5%;
+}
+
+.icon-item {
+    text-align: center;
+    transition: transform .2s;
+}
+
+.icon-item p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icon-container ion-icon{
+    zoom: 4.0;
+}
+
+.icon-item:hover{
+    transform: scale(1.2);
+}
+
+.icon-item a{
+    text-decoration: none;
+    color: #9640e5; 
+}
+
+/*explorar jogos*/
+
+.container-explorar{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.container-explorar h2{
+    color: #e20bf8;
+    font-size: 50px;
+    font-weight: 1000;
+    margin-bottom: 40px;
+}
+
+.container-explorar a {
+    text-decoration: none;
+    color: #9640e5;
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+.container-explorar a:hover{
+    color:#044c04;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
