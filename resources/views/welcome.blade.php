@@ -4,6 +4,10 @@
 
 @section('content')
 
+<head>
+    <link rel="stylesheet" href="/css/index/home.css"></link>   
+</head>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const radios = document.querySelectorAll('.input-radio');
@@ -86,63 +90,28 @@
 
     <div class="container-explorar">
         <h2>Explorar jogos no universe</h2>
-        <a href="">
+        <a href="/games/dashboard">
             <p>Explore todos os jogos</p>
         </a>
     </div>
 
     <div class="games-cards">
-        <div class="container-card">
-            <div class="card">
-                <div class="wrapper">
-                    <img class="cover-image" src="/img/dark_rider-cover.jpg" alt="">
+        @if(count($lastFiveGames) > 0)
+            @foreach($lastFiveGames as $game)
+                <div class="container-card">
+                    <div class="card">
+                        <div class="wrapper">
+                            <img class="cover-image" src="/img/{{ $game->getCoverImage() }}" alt="">
+                        </div>
+                        
+                        <img class="character" src="/img/{{ $game->getCharacterImage() }}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title">{{ $game->getTitle() }}</p>
+                    </div>
                 </div>
-                
-                <img class="character" src="/img/dark_rider-character.webp" alt="">
-            </div>
-            <div class="card-body">
-                <p class="card-title">The dark rider</p>
-            </div>
-        </div>
-
-        <div class="container-card">
-            <div class="card">
-                <div class="wrapper">
-                    <img class="cover-image" src="/img/force_mage-cover.jpg" alt="">
-                </div>
-
-                <img class="character" src="/img/force_mage-character.webp" alt="">
-            </div>
-            <div class="card-body">
-                <p class="card-title">Force mage</p>
-            </div>
-        </div>
-
-        <div class="container-card">
-            <div class="card">
-                <div class="wrapper">
-                    <img class="cover-image" src="/img/dark_rider-cover.jpg" alt="">
-                </div>
-                
-                <img class="character" src="/img/dark_rider-character.webp" alt="">
-            </div>
-            <div class="card-body">
-                <p class="card-title">The dark rider</p>
-            </div>
-        </div>
-
-        <div class="container-card">
-            <div class="card">
-                <div class="wrapper">
-                    <img class="cover-image" src="/img/force_mage-cover.jpg" alt="">
-                </div>
-            
-                <img class="character" src="/img/force_mage-character.webp" alt="">
-            </div>
-            <div class="card-body">
-                <p class="card-title">Force mage</p>
-            </div>
-        </div>
+            @endforeach
+        @endif
     </div>
 </div>
 @endsection

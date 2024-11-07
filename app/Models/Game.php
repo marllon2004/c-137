@@ -19,6 +19,16 @@ class Game extends Model
         return $this->title;
     }
 
+    public function getCoverImage()
+    {
+        return $this->cover_image;
+    }
+
+    public function getCharacterImage()
+    {
+        return $this->character_image;
+    }
+
     public function company(){
         return $this->belongsTo('App\models\Company');
     }

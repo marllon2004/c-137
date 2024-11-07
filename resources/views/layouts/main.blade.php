@@ -13,7 +13,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         
         <link rel="stylesheet" href="/css/styles.css"></link>
-        <script src="/js/scripts.js"></script>
+        <script src="/js/script.js"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     </head>
@@ -49,9 +49,10 @@
                         <li class="nav-item">
                             <form action="/logout" method="POST">
                                 @csrf
-                                <a href="/logout" class="nav-link" onclick="game.preventDefault(); this.closest('form').submit();">Sair</a>
+                                <a href="/logout" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
                             </form>
                         </li>
+
                         @endauth
 
                         @guest
@@ -77,7 +78,30 @@
         </div>
     </main>
     <footer>
-        <p>Universe C-137 &copy; 2024</p>
+        <p class="copyright">Universe C-137 &copy; 2024</p>
+
+        <h5>Sobre a gente:</h5>
+        <p>Universe C-137 é um e-commerce especializado em jogos. Aqui você encontra os títulos mais populares, divertidos e jogados do momento, selecionados para oferecer a melhor experiência de entretenimento.</p>
+        <h5>Curiosidade:</h5>
+        <p>O nome Universe C-137 é uma referência à série Rick and Morty. Na trama, C-137 é o universo original de Rick Sanchez. Aqui, ele representa um "universo de jogos," onde você encontra uma galáxia de opções e entretenimento.</p>
+        <h5>Autores e Desenvolvedores:</h5>
+        <ul class="autores">
+            <li>
+                <a href="https://www.instagram.com/joao.adonis/">
+                    <ion-icon name="person-circle-outline"></ion-icon> João Vitor Adonis
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/_araujmll/">
+                    <ion-icon name="person-circle-outline"></ion-icon> Marllon Silva Araujo Coelho
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/oobakemono/">
+                    <ion-icon name="person-circle-outline"></ion-icon> Matheus Henrique de Lima
+                </a>
+            </li>
+        </ul>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -4,6 +4,10 @@
 
 @section('content')
 
+<head>
+    <link rel="stylesheet" href="/css/register.css"></link>   
+</head>
+
 <div class="style-container">
     <div class="style-container-card">
         <h1>Cadastrar categoria</h1>
