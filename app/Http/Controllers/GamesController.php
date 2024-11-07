@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Services\GameService;
 use App\Services\CompanyService;
+use App\Services\CategoryService;
+use App\Services\GamingPlatformService;
 
 class GamesController extends Controller{
 
@@ -12,10 +14,16 @@ class GamesController extends Controller{
 
     protected $companyService;
 
-    public function __construct(GameService $gameService, CompanyService $companyService)
+    protected $categoryService;
+
+    protected $gamingPlatformService;
+
+    public function __construct(GameService $gameService, CompanyService $companyService, CategoryService $categoryService, GamingPlatformService $gamingPlatformService)
     {
         $this->gameService = $gameService;
         $this->companyService = $companyService;
+        $this->categoryService = $categoryService;
+        $this->gamingPlatformService = $gamingPlatformService;
     }
 
     public function index(){
@@ -26,8 +34,10 @@ class GamesController extends Controller{
 
     public function create(){
         $companies = $this->companyService->getCompanies();
+        $categories = $this->categoryService->getCategories();
+        $gamingPlatforms = $this->gamingPlatformService->getGamingPlatforms();
     
-        return view('games.create', ['companies' => $companies]);
+        return view('games.create', ['companies' => $companies, 'categories' => $categories, 'gamingPlatforms' => $gamingPlatforms]);
     }
 
     public function store(Request $request) {
